@@ -1,63 +1,51 @@
 .home {
-  padding: 2rem 0;
   width: 100%;
-  box-sizing: border-box;
+  margin-top: 20px;
 }
 
+/* Search bar */
 .search-form {
-  max-width: 600px;
-  margin: 0 auto 2rem;
   display: flex;
-  gap: 1rem;
-  padding: 0 1rem;
-  box-sizing: border-box;
+  justify-content: center;
+  margin-bottom: 25px;
 }
 
 .search-input {
-  flex: 1;
-  padding: 0.75rem 1rem;
-  border: none;
-  border-radius: 4px;
-  background-color: #333;
-  color: white;
-  font-size: 1rem;
+  width: 350px;
+  padding: 12px 15px;
+  border-radius: 6px;
+  background: #1a1a22;
+  border: 1px solid #333;
+  color: #fff;
+  outline: none;
+  margin-right: 10px;
+  transition: 0.2s;
 }
 
 .search-input:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #666;
+  border-color: #ff3333;
+  box-shadow: 0 0 8px #ff3333;
 }
 
 .search-button {
-  padding: 0.75rem 1.5rem;
-  background-color: #e50914;
+  padding: 12px 18px;
+  background: #ff3333;
   color: white;
-  border-radius: 4px;
-  font-weight: 500;
-  transition: background-color 0.2s;
-  white-space: nowrap;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.2s;
 }
 
 .search-button:hover {
-  background-color: #f40612;
+  background: #ff5555;
+  box-shadow: 0 0 12px #ff4444;
 }
 
-
-@media (max-width: 639px) {
-  .home {
-    padding: 1rem 0;
-  }
-
-  .search-form {
-    margin-bottom: 1rem;
-  }
-}
-
+/* Movies grid */
 .movies-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  padding: 1rem;
-  width: 100%;
-  box-sizing: border-box;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 25px;
+  padding: 20px;
 }

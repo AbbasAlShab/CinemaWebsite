@@ -1,22 +1,36 @@
-import '../css/MovieCard.css';
-function MovieCard({movie}){
-    function OnFavouriteClick(){
-        alert("Favourited")
-    }
-  return <div className="movie-card">
-    <div className="movie-poster">
-        <img src ={movie.url} alt={movie.title}/>
-        <div className="movie-overlay">
-            <button className="favourite-btn" onClick={OnFavouriteClick}>
-                ❤︎
-            </button>
+import "../css/MovieCard.css";
 
+function MovieCard({ movie, handleAddFavourite, handleRemoveFavourite }) {
+  return (
+    <div className="movie-card">
+      <div className="movie-poster">
+        <img src={movie.url} alt={movie.title} />
+
+        <div className="movie-overlay">
+          {handleRemoveFavourite ? (
+            <button
+              className="favourite-btn"
+              onClick={() => handleRemoveFavourite(movie.id)}
+            >
+              🗑
+            </button>
+          ) : handleAddFavourite ? (
+            <button
+              className="favourite-btn"
+              onClick={() => handleAddFavourite(movie)}
+            >
+              ❤︎
+            </button>
+          ) : null}
         </div>
-    </div>
-    <div className="movie-info">
+      </div>
+
+      <div className="movie-info">
         <h3>{movie.title}</h3>
         <p>{movie.release_date}</p>
+      </div>
     </div>
-  </div>
+  );
 }
-export default MovieCard
+
+export default MovieCard;

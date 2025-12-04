@@ -1,40 +1,73 @@
-.favorites {
-  padding: 2rem;
-  width: 100%;
+
+.favorites-list {
+  display: flex;          
+  flex-wrap: wrap;       
+  gap: 25px;              
+  justify-content: center;
+  padding: 20px;
   box-sizing: border-box;
 }
 
-.favorites h2 {
-  margin-bottom: 2rem;
-  text-align: center;
-  font-size: 2.5rem;
-  color: #ffffff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.favorites-empty {
-  text-align: center;
-  padding: 4rem 2rem;
-  background-color: rgba(255, 255, 255, 0.05);
+.favorites-list .movie-card {
+  width: 220px;          
   border-radius: 12px;
-  margin: 2rem auto;
-  max-width: 600px;
+  overflow: hidden;
+  position: relative;
+  transition: 0.3s ease;
+  box-shadow: 0 0 10px #000;
+  background: #15151b;
 }
 
-.favorites-empty h2 {
-  margin-bottom: 1rem;
-  font-size: 2rem;
-  color: #e50914;
+.favorites-list .movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.35);
 }
 
-.favorites-empty p {
-  color: #999;
-  font-size: 1.2rem;
-  line-height: 1.6;
+.favorites-list .movie-card .movie-poster img {
+  width: 100% !important;
+  height: 320px !important;
+  object-fit: cover !important;
+  display: block;
 }
 
+.favorites-list .movie-card .movie-overlay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
 
-/* Animation for new favorites being added */
+.favorites-list .movie-card .favourite-btn {
+  background: rgba(0,0,0,0.7);
+  border: 1px solid #ff4d4d;
+  color: #ff4d4d;
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  transition: 0.2s;
+}
+
+.favorites-list .movie-card .favourite-btn:hover {
+  background: rgba(255,0,0,0.3);
+  color: white;
+  box-shadow: 0 0 10px #ff4444;
+}
+
+.favorites-list .movie-card .movie-info {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.favorites-list .movie-card .movie-info h3 {
+  margin: 5px 0;
+  font-size: 18px;
+}
+
+.favorites-list .movie-card .movie-info p {
+  color: #bbb;
+  font-size: 14px;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -46,7 +79,6 @@
   }
 }
 
-.movies-grid > * {
+.favorites-list > * {
   animation: fadeIn 0.3s ease-out forwards;
 }
-
